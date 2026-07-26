@@ -1,0 +1,280 @@
+/* ===========================
+   TBfotography FAQ
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0B0B0B;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+.navbar{
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:92%;
+    max-width:1200px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 25px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:50px;
+    z-index:999;
+}
+
+.logo{
+    text-decoration:none;
+    color:#fff;
+    font-size:30px;
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+}
+
+.logo span{
+    color:#D4AF37;
+}
+
+nav{
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover,
+nav .active{
+    color:#D4AF37;
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+    height:50vh;
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75)),
+    url("../images/hero4.jpg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero-content h1{
+    font-size:60px;
+    font-family:'Playfair Display',serif;
+    margin-bottom:15px;
+}
+
+.hero-content p{
+    color:#ddd;
+    font-size:18px;
+    max-width:650px;
+    padding:0 20px;
+}
+
+/* ===========================
+   SEARCH
+=========================== */
+
+.search-section{
+    padding:60px 20px;
+    display:flex;
+    justify-content:center;
+}
+
+#searchInput{
+    width:100%;
+    max-width:650px;
+    padding:18px 25px;
+    border:none;
+    outline:none;
+    border-radius:50px;
+    background:#1a1a1a;
+    color:#fff;
+    font-size:17px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+#searchInput::placeholder{
+    color:#aaa;
+}
+
+/* ===========================
+   FAQ
+=========================== */
+
+.faq-container{
+    width:92%;
+    max-width:950px;
+    margin:auto;
+    padding-bottom:100px;
+}
+
+.faq-item{
+    background:#161616;
+    border-radius:18px;
+    margin-bottom:18px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.3s;
+}
+
+.faq-item:hover{
+    border-color:#D4AF37;
+}
+
+.faq-question{
+    padding:22px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:600;
+}
+
+.faq-question span{
+    font-size:28px;
+    color:#D4AF37;
+    transition:.35s;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .45s ease;
+}
+
+.faq-answer p{
+    padding:0 25px 25px;
+    color:#cfcfcf;
+    line-height:1.8;
+}
+
+/* ===========================
+   CONTACT CTA
+=========================== */
+
+.faq-contact{
+    padding:100px 20px;
+    text-align:center;
+    background:#111;
+}
+
+.faq-contact h2{
+    font-size:46px;
+    font-family:'Playfair Display',serif;
+}
+
+.faq-contact p{
+    margin:20px auto;
+    max-width:650px;
+    color:#bbb;
+    line-height:1.8;
+}
+
+.chat-btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:18px 40px;
+    background:#25D366;
+    color:#fff;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.chat-btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 30px rgba(37,211,102,.25);
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+    background:#080808;
+    text-align:center;
+    padding:60px 20px;
+}
+
+footer h2{
+    font-family:'Playfair Display',serif;
+    font-size:34px;
+    margin-bottom:15px;
+}
+
+footer span{
+    color:#D4AF37;
+}
+
+footer p{
+    color:#999;
+    margin-top:10px;
+    line-height:1.8;
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+.navbar nav{
+    display:none;
+}
+
+.logo{
+    font-size:24px;
+}
+
+.hero-content h1{
+    font-size:42px;
+}
+
+.hero-content p{
+    font-size:16px;
+}
+
+.faq-question{
+    font-size:16px;
+}
+
+.faq-contact h2{
+    font-size:34px;
+}
+
+#searchInput{
+    font-size:16px;
+}
+
+}

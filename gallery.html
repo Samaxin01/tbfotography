@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gallery | TBfotography</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="gallery.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+    <a href="home.html" class="logo">
+
+        TB<span>fotography</span>
+
+    </a>
+
+    <nav>
+
+        <a href="home.html">Home</a>
+
+        <a href="gallery.html" class="active">Gallery</a>
+
+        <a href="packages.html">Packages</a>
+
+        <a href="contact.html">Contact</a>
+
+    </nav>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="gallery-hero">
+
+    <h1>Our Gallery</h1>
+
+    <p>
+
+        Every picture tells a story. Explore some of our favourite moments captured through the lens.
+
+    </p>
+
+</section>
+
+<!-- ================= FILTERS ================= -->
+
+<section class="filters">
+
+    <button class="active" data-filter="all">All</button>
+
+    <button data-filter="babies">Babies</button>
+
+    <button data-filter="kids">Kids</button>
+
+    <button data-filter="adults">Adults</button>
+
+    <button data-filter="couples">Couples</button>
+
+    <button data-filter="family">Family</button>
+
+    <button data-filter="graduation">Graduation</button>
+
+    <button data-filter="events">Events</button>
+
+</section>
+
+<!-- ================= GALLERY ================= -->
+
+<section class="gallery">
+
+    <div class="gallery-item babies">
+
+        <img src="image.jpg" alt="Baby Photography">
+
+    </div>
+
+    <div class="gallery-item babies">
+
+        <img src="image2.jpg" alt="Baby Photography">
+
+    </div>
+
+    <div class="gallery-item kids">
+
+        <img src="image3.jpg" alt="Kids Photography">
+
+    </div>
+
+    <div class="gallery-item kids">
+
+        <img src="image4.jpg" alt="Kids Photography">
+
+    </div>
+
+    <div class="gallery-item adults">
+
+        <img src="images/gallery/adult1.jpg" alt="Adult Photography">
+
+    </div>
+
+    <div class="gallery-item adults">
+
+        <img src="images/gallery/adult2.jpg" alt="Adult Photography">
+
+    </div>
+
+    <div class="gallery-item couples">
+
+        <img src="images/gallery/couple1.jpg" alt="Couple Photography">
+
+    </div>
+
+    <div class="gallery-item couples">
+
+        <img src="images/gallery/couple2.jpg" alt="Couple Photography">
+
+    </div>
+
+    <div class="gallery-item family">
+
+        <img src="images/gallery/family1.jpg" alt="Family Photography">
+
+    </div>
+
+    <div class="gallery-item graduation">
+
+        <img src="images/gallery/graduation1.jpg" alt="Graduation Photography">
+
+    </div>
+
+    <div class="gallery-item events">
+
+        <img src="images/gallery/event1.jpg" alt="Event Photography">
+
+    </div>
+
+    <div class="gallery-item events">
+
+        <img src="images/gallery/event2.jpg" alt="Event Photography">
+
+    </div>
+
+</section>
+
+<!-- ================= LIGHTBOX ================= -->
+
+<div class="lightbox" id="lightbox">
+
+    <span class="close">&times;</span>
+
+    <img id="lightbox-img">
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h2>TB<span>fotography</span></h2>
+
+    <p>
+
+        Capturing Moments That Last Forever.
+
+    </p>
+
+    <p>
+
+        © 2026 TBfotography. All Rights Reserved.
+
+    </p>
+
+</footer>
+
+<script>
+/* ===========================
+   TBfotography Gallery.js
+=========================== */
+
+// ===========================
+// FILTER
+// ===========================
+
+const filterButtons = document.querySelectorAll(".filters button");
+const galleryItems = document.querySelectorAll(".gallery-item");
+
+filterButtons.forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        filterButtons.forEach(btn=>btn.classList.remove("active"));
+
+        button.classList.add("active");
+
+        const filter = button.dataset.filter;
+
+        galleryItems.forEach(item=>{
+
+            if(filter === "all"){
+
+                item.style.display = "block";
+
+            }
+
+            else if(item.classList.contains(filter)){
+
+                item.style.display = "block";
+
+            }
+
+            else{
+
+                item.style.display = "none";
+
+            }
+
+        });
+
+    });
+
+});
+
+// ===========================
+// LIGHTBOX
+// ===========================
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".close");
+
+let currentIndex = 0;
+let visibleImages = [];
+
+function updateVisibleImages(){
+
+    visibleImages = Array.from(document.querySelectorAll(".gallery-item"))
+        .filter(item => item.style.display !== "none");
+
+}
+
+updateVisibleImages();
+
+galleryItems.forEach(item=>{
+
+    item.addEventListener("click",()=>{
+
+        updateVisibleImages();
+
+        currentIndex = visibleImages.indexOf(item);
+
+        lightboxImg.src = item.querySelector("img").src;
+
+        lightbox.classList.add("show");
+
+    });
+
+});
+
+// ===========================
+// CLOSE
+// ===========================
+
+closeBtn.onclick = ()=>{
+
+    lightbox.classList.remove("show");
+
+};
+
+lightbox.onclick = (e)=>{
+
+    if(e.target === lightbox){
+
+        lightbox.classList.remove("show");
+
+    }
+
+};
+
+// ===========================
+// KEYBOARD
+// ===========================
+
+document.addEventListener("keydown",(e)=>{
+
+    if(!lightbox.classList.contains("show")) return;
+
+    if(e.key === "Escape"){
+
+        lightbox.classList.remove("show");
+
+    }
+
+    if(e.key === "ArrowRight"){
+
+        currentIndex++;
+
+        if(currentIndex >= visibleImages.length){
+
+            currentIndex = 0;
+
+        }
+
+        lightboxImg.src =
+        visibleImages[currentIndex].querySelector("img").src;
+
+    }
+
+    if(e.key === "ArrowLeft"){
+
+        currentIndex--;
+
+        if(currentIndex < 0){
+
+            currentIndex = visibleImages.length - 1;
+
+        }
+
+        lightboxImg.src =
+        visibleImages[currentIndex].querySelector("img").src;
+
+    }
+
+});
+</script>
+
+</body>
+</html>

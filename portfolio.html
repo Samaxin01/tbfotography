@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Explore the premium photography portfolio of TBfotography.">
+
+    <title>Portfolio | TBfotography</title>
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="global.css">
+
+    <link rel="stylesheet"
+          href="portfolio.css">
+
+</head>
+
+<body>
+
+<!--==============================
+            LOADER
+===============================-->
+
+<div id="loader">
+
+    <div class="loader-content">
+
+
+
+        <h1>TBfotography</h1>
+
+    </div>
+
+</div>
+
+<!--==============================
+            HEADER
+===============================-->
+
+<header class="header">
+
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+
+            TB<span>fotography</span>
+
+        </a>
+
+        <ul class="nav-menu">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="packages.html">Packages</a></li>
+
+            <li><a href="portfolio.html" class="active">Portfolio</a></li>
+
+            <li><a href="reviews.html">Reviews</a></li>
+
+            <li><a href="about.html">About</a></li>
+
+            <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+
+        <button class="menu-btn">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+    </nav>
+
+</header>
+
+<!--==============================
+        PAGE HERO
+===============================-->
+
+<section class="page-hero">
+
+    <div class="page-overlay"></div>
+
+    <div class="page-content">
+
+        <span>Our Best Work</span>
+
+        <h1>Photography Portfolio</h1>
+
+        <p>
+
+            Every photograph tells a story.
+            Explore some of our favorite moments.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!--==============================
+        FILTER BUTTONS
+===============================-->
+
+<section class="portfolio-filter">
+
+    <div class="container">
+
+        <div class="filter-buttons">
+
+            <button class="filter-btn active"
+                    data-filter="all">
+
+                All
+
+            </button>
+
+            <button class="filter-btn"
+                    data-filter="babies">
+
+                Babies
+
+            </button>
+
+            <button class="filter-btn"
+                    data-filter="kids">
+
+                Kids
+
+            </button>
+
+            <button class="filter-btn"
+                    data-filter="adults">
+
+                Adults
+
+            </button>
+
+            <button class="filter-btn"
+                    data-filter="couples">
+
+                Couples
+
+            </button>
+
+            <button class="filter-btn"
+                    data-filter="family">
+
+                Family
+
+            </button>
+
+            <button class="filter-btn"
+                    data-filter="events">
+
+                Events
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--==============================
+        GALLERY
+===============================-->
+
+<section class="portfolio">
+
+    <div class="container">
+
+        <div class="gallery-grid">
+
+            <!-- Image 1 -->
+
+            <div class="gallery-item reveal"
+
+                 data-category="babies">
+
+                <img src="image.jpg"
+                     alt="Baby Photography">
+
+                <div class="gallery-overlay">
+
+                    <i class="fa-solid fa-expand"></i>
+
+                    <h3>Baby Session</h3>
+
+                </div>
+
+            </div>
+
+            <!-- Image 2 -->
+
+            <div class="gallery-item reveal"
+
+                 data-category="kids">
+
+                <img src="image2.jpg"
+                     alt="Kids Photography">
+
+                <div class="gallery-overlay">
+
+                    <i class="fa-solid fa-expand"></i>
+
+                    <h3>Kids Session</h3>
+
+                </div>
+
+            </div>
+
+            <!-- Image 3 -->
+
+            <div class="gallery-item reveal"
+
+                 data-category="adults">
+
+                <img src="assets/images/portfolio/adult1.jpg"
+                     alt="Adult Photography">
+
+                <div class="gallery-overlay">
+
+                    <i class="fa-solid fa-expand"></i>
+
+                    <h3>Portrait Session</h3>
+
+                </div>
+
+            </div>
+
+            <!-- Image 4 -->
+
+            <div class="gallery-item reveal"
+
+                 data-category="couples">
+
+                <img src="assets/images/portfolio/couple1.jpg"
+                     alt="Couples Photography">
+
+                <div class="gallery-overlay">
+
+                    <i class="fa-solid fa-expand"></i>
+
+                    <h3>Couples Session</h3>
+
+                </div>
+
+            </div>
+
+            <!-- Image 5 -->
+
+            <div class="gallery-item reveal"
+
+                 data-category="family">
+
+                <img src="assets/images/portfolio/family1.jpg"
+                     alt="Family Photography">
+
+                <div class="gallery-overlay">
+
+                    <i class="fa-solid fa-expand"></i>
+
+                    <h3>Family Session</h3>
+
+                </div>
+
+            </div>
+
+            <!-- Image 6 -->
+
+            <div class="gallery-item reveal"
+
+                 data-category="events">
+
+                <img src="assets/images/portfolio/event1.jpg"
+                     alt="Event Photography">
+
+                <div class="gallery-overlay">
+
+                    <i class="fa-solid fa-expand"></i>
+
+                    <h3>Event Coverage</h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--==============================
+        LIGHTBOX
+===============================-->
+
+<div class="lightbox">
+
+    <span class="lightbox-close">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </span>
+
+    <img class="lightbox-image"
+         src=""
+         alt="Preview">
+
+    <button class="lightbox-prev">
+
+        <i class="fa-solid fa-chevron-left"></i>
+
+    </button>
+
+    <button class="lightbox-next">
+
+        <i class="fa-solid fa-chevron-right"></i>
+
+    </button>
+
+</div>
+
+<!--==============================
+            CTA
+===============================-->
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>
+
+            Let's Create Beautiful Memories Together
+
+        </h2>
+
+        <p>
+
+            Book your photography session today.
+
+        </p>
+
+        <a href="packages.html"
+           class="btn btn-gold">
+
+            View Packages
+
+        </a>
+
+    </div>
+
+</section>
+
+<!--==============================
+            FOOTER
+===============================-->
+
+<footer>
+
+    <p>
+
+        © <span id="year"></span>
+        TBfotography.
+        All Rights Reserved.
+
+    </p>
+
+</footer>
+
+<!-- Floating WhatsApp -->
+
+<a href="#"
+   class="whatsapp-float">
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+<!-- Back To Top -->
+
+<button class="back-to-top">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+<!-- JavaScript -->
+
+<script src="global.js"></script>
+
+<script src="portfolio.js"></script>
+
+</body>
+
+</html>
