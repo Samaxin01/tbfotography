@@ -78,7 +78,7 @@ nav .active{
     text-align:center;
     background:
     linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.75)),
-    url("../images/hero2.jpg");
+    url("image9.jpg");
     background-size:cover;
     background-position:center;
 }
@@ -265,5 +265,192 @@ nav{
     padding:11px 20px;
     font-size:14px;
 }
+
+}
+/* ===========================
+   NAVBAR
+=========================== */
+
+.navbar{
+
+    position:fixed;
+
+    top:20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:92%;
+
+    max-width:1200px;
+
+    padding:18px 25px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    border-radius:60px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    z-index:1000;
+
+}
+
+.logo{
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-family:'Playfair Display',serif;
+
+    font-size:30px;
+
+    font-weight:700;
+
+}
+
+.logo span{
+
+    color:gold;
+
+}
+
+/* ===========================
+   HAMBURGER
+=========================== */
+
+.menu-btn{
+
+    width:58px;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:6px;
+
+    cursor:pointer;
+
+}
+
+.menu-btn span{
+
+    width:24px;
+
+    height:3px;
+
+    background:#fff;
+
+    border-radius:10px;
+
+    transition:.35s;
+
+}
+
+/* Animation */
+
+.menu-btn.active span:nth-child(1){
+
+    transform:translateY(9px) rotate(45deg);
+
+}
+
+.menu-btn.active span:nth-child(2){
+
+    opacity:0;
+
+}
+
+.menu-btn.active span:nth-child(3){
+
+    transform:translateY(-9px) rotate(-45deg);
+
+}
+
+/* ===========================
+   MOBILE MENU
+=========================== */
+
+.mobile-menu{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.95);
+
+    backdrop-filter:blur(25px);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:35px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.4s;
+
+    z-index:999;
+
+}
+
+.mobile-menu.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.mobile-menu a{
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:30px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.mobile-menu a:hover{
+
+    color:gold;
+
+    transform:translateX(10px);
 
 }

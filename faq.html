@@ -25,27 +25,36 @@
 
 <header class="navbar">
 
-<a href="home.html" class="logo">
+    <a href="home.html" class="logo">
+        TB<span>fotography</span>
+    </a>
 
-TB<span>fotography</span>
+    <button id="menuBtn" class="menu-btn">
 
-</a>
+        <span></span>
+        <span></span>
+        <span></span>
 
-<nav>
-
-<a href="home.html">Home</a>
-
-<a href="gallery.html">Gallery</a>
-
-<a href="packages.html">Packages</a>
-
-<a href="faq.html" class="active">FAQ</a>
-
-<a href="contact.html">Contact</a>
-
-</nav>
+    </button>
 
 </header>
+
+
+<!-- Mobile Navigation -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <a href="home.html">Home</a>
+
+    <a href="gallery.html">Gallery</a>
+
+    <a href="packages.html">Packages</a>
+
+    <a href="faq.html">FAQ</a>
+
+    
+
+</div>
 
 <!-- ================= HERO ================= -->
 
@@ -187,7 +196,7 @@ Our studio location will be shared once your booking has been confirmed.
 
 <p>
 
-Most photography sessions last between <strong>45 minutes</strong> and <strong>2 hours</strong>, depending on the selected package.
+A session time can't be predicted.
 
 </p>
 
@@ -316,7 +325,7 @@ class="chat-btn">
 </section>
 
 <!-- ================= FOOTER ================= -->
-
+<!--
 <footer>
 
 <h2>
@@ -337,10 +346,52 @@ Capturing Moments That Last Forever.
 
 </p>
 
-</footer>
+</footer> -->
 
 <script src="faq.js"></script>
+<script>
+const menuBtn = document.getElementById("menuBtn");
 
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuBtn.addEventListener("click",()=>{
+
+    menuBtn.classList.toggle("active");
+
+    mobileMenu.classList.toggle("show");
+
+});
+
+
+// Close when a link is clicked
+
+document.querySelectorAll(".mobile-menu a").forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        menuBtn.classList.remove("active");
+
+        mobileMenu.classList.remove("show");
+
+    });
+
+});
+
+
+// Close when clicking outside the menu links
+
+mobileMenu.addEventListener("click",(e)=>{
+
+    if(e.target === mobileMenu){
+
+        menuBtn.classList.remove("active");
+
+        mobileMenu.classList.remove("show");
+
+    }
+
+});
+</script>
 </body>
 
 </html>

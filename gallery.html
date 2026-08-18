@@ -20,28 +20,37 @@
 <body>
 
 <!-- ================= NAVBAR ================= -->
-
-<header>
+<header class="navbar">
 
     <a href="home.html" class="logo">
-
         TB<span>fotography</span>
-
     </a>
 
-    <nav>
+    <button id="menuBtn" class="menu-btn">
 
-        <a href="home.html">Home</a>
+        <span></span>
+        <span></span>
+        <span></span>
 
-        <a href="gallery.html" class="active">Gallery</a>
-
-        <a href="packages.html">Packages</a>
-
-        <a href="contact.html">Contact</a>
-
-    </nav>
+    </button>
 
 </header>
+
+
+<!-- Mobile Navigation -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <a href="index.html">Home</a>
+
+    <a href="gallery.html">Gallery</a>
+
+    <a href="packages.html">Packages</a>
+
+    <a href="faq.html">FAQ</a>
+
+
+</div>
 
 <!-- ================= HERO ================= -->
 
@@ -63,7 +72,7 @@
 
     <button class="active" data-filter="all">All</button>
 
-    <button data-filter="babies">Babies</button>
+ <!--   <button data-filter="babies">Babies</button>
 
     <button data-filter="kids">Kids</button>
 
@@ -75,7 +84,7 @@
 
     <button data-filter="graduation">Graduation</button>
 
-    <button data-filter="events">Events</button>
+    <button data-filter="events">Events</button> -->
 
 </section>
 
@@ -85,7 +94,7 @@
 
     <div class="gallery-item babies">
 
-        <img src="image.jpg" alt="Baby Photography">
+        <img src="image13.jpg" alt="Baby Photography">
 
     </div>
 
@@ -103,55 +112,55 @@
 
     <div class="gallery-item kids">
 
-        <img src="image4.jpg" alt="Kids Photography">
+        <img src="image11.jpg" alt="Kids Photography">
 
     </div>
 
     <div class="gallery-item adults">
 
-        <img src="images/gallery/adult1.jpg" alt="Adult Photography">
+        <img src="image8.jpg" alt="Adult Photography">
 
     </div>
 
     <div class="gallery-item adults">
 
-        <img src="images/gallery/adult2.jpg" alt="Adult Photography">
+        <img src="image14.jpg" alt="Adult Photography">
 
     </div>
 
     <div class="gallery-item couples">
 
-        <img src="images/gallery/couple1.jpg" alt="Couple Photography">
+        <img src="image15.jpg" alt="Couple Photography">
 
     </div>
 
     <div class="gallery-item couples">
 
-        <img src="images/gallery/couple2.jpg" alt="Couple Photography">
+        <img src="image16.jpg" alt="Couple Photography">
 
     </div>
 
     <div class="gallery-item family">
 
-        <img src="images/gallery/family1.jpg" alt="Family Photography">
+        <img src="image17family1.jpg" alt="Family Photography">
 
     </div>
 
     <div class="gallery-item graduation">
 
-        <img src="images/gallery/graduation1.jpg" alt="Graduation Photography">
+        <img src="image18.jpg" alt="Graduation Photography">
 
     </div>
 
     <div class="gallery-item events">
 
-        <img src="images/gallery/event1.jpg" alt="Event Photography">
+        <img src="image19.jpg" alt="Event Photography">
 
     </div>
 
     <div class="gallery-item events">
 
-        <img src="images/gallery/event2.jpg" alt="Event Photography">
+        <img src="image20.jpg" alt="Event Photography">
 
     </div>
 
@@ -332,6 +341,49 @@ document.addEventListener("keydown",(e)=>{
 
         lightboxImg.src =
         visibleImages[currentIndex].querySelector("img").src;
+
+    }
+
+});
+
+// Burger
+const menuBtn = document.getElementById("menuBtn");
+
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuBtn.addEventListener("click",()=>{
+
+    menuBtn.classList.toggle("active");
+
+    mobileMenu.classList.toggle("show");
+
+});
+
+
+// Close when a link is clicked
+
+document.querySelectorAll(".mobile-menu a").forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        menuBtn.classList.remove("active");
+
+        mobileMenu.classList.remove("show");
+
+    });
+
+});
+
+
+// Close when clicking outside the menu links
+
+mobileMenu.addEventListener("click",(e)=>{
+
+    if(e.target === mobileMenu){
+
+        menuBtn.classList.remove("active");
+
+        mobileMenu.classList.remove("show");
 
     }
 
