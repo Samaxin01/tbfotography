@@ -1,0 +1,473 @@
+/*==================================================
+                TBfotography
+                 global.css
+      Global Styles • Colors • Navbar • Footer
+====================================================*/
+
+/*==============================
+        GOOGLE FONTS
+===============================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/*==============================
+        CSS VARIABLES
+===============================*/
+
+:root{
+
+    --primary:#D4AF37;
+    --primary-dark:#b89627;
+    --black:#0B0B0B;
+    --dark:#141414;
+    --white:#ffffff;
+    --text:#d6d6d6;
+    --border:rgba(255,255,255,.08);
+
+    --radius:20px;
+
+    --shadow:0 15px 40px rgba(0,0,0,.35);
+
+    --transition:.35s ease;
+
+}
+
+/*==============================
+        RESET
+===============================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--black);
+
+    color:var(--white);
+
+    overflow-x:hidden;
+
+}
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+button{
+
+    font-family:inherit;
+
+    cursor:pointer;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+/*==============================
+        SCROLLBAR
+===============================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:30px;
+
+}
+
+/*==============================
+        CONTAINER
+===============================*/
+
+.container{
+
+    width:min(1200px,92%);
+
+    margin:auto;
+
+}
+
+/*==============================
+        SECTION
+===============================*/
+
+section{
+
+    padding:90px 0;
+
+}
+
+/*==============================
+        BUTTONS
+===============================*/
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:16px 34px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.btn-gold{
+
+    background:var(--primary);
+
+    color:#111;
+
+}
+
+.btn-gold:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-4px);
+
+}
+
+.btn-outline{
+
+    border:2px solid var(--primary);
+
+    color:var(--white);
+
+}
+
+.btn-outline:hover{
+
+    background:var(--primary);
+
+    color:#111;
+
+}
+
+/*==============================
+        LOADER
+===============================*/
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#000;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+    transition:.6s;
+
+}
+
+#loader.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+.loader-content{
+
+    text-align:center;
+
+}
+
+.loader-content i{
+
+    font-size:4rem;
+
+    color:var(--primary);
+
+    animation:pulse 1.5s infinite;
+
+}
+
+.loader-content h1{
+
+    margin-top:20px;
+
+    font-size:2rem;
+
+    font-family:'Playfair Display',serif;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(.9);
+
+    }
+
+    50%{
+
+        transform:scale(1.1);
+
+    }
+
+    100%{
+
+        transform:scale(.9);
+
+    }
+
+}
+
+/*==============================
+        HEADER
+===============================*/
+
+.header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    background:rgba(11,11,11,.75);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.navbar{
+
+    width:min(1200px,92%);
+
+    margin:auto;
+
+    height:80px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.logo{
+
+    font-size:1.8rem;
+
+    font-weight:700;
+
+    font-family:'Playfair Display',serif;
+
+}
+
+.logo span{
+
+    color:var(--primary);
+
+}
+
+.nav-menu{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+
+}
+
+.nav-menu a{
+
+    position:relative;
+
+    transition:var(--transition);
+
+}
+
+.nav-menu a:hover,
+
+.nav-menu a.active{
+
+    color:var(--primary);
+
+}
+
+.nav-menu a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--primary);
+
+    transition:var(--transition);
+
+}
+
+.nav-menu a:hover::after,
+
+.nav-menu a.active::after{
+
+    width:100%;
+
+}
+
+.menu-btn{
+
+    display:none;
+
+    background:none;
+
+    border:none;
+
+    color:#fff;
+
+    font-size:1.7rem;
+
+}
+
+/*==============================
+        FOOTER
+===============================*/
+
+footer{
+
+    background:#080808;
+
+    padding:35px 20px;
+
+    text-align:center;
+
+    border-top:1px solid var(--border);
+
+}
+
+footer p{
+
+    color:#999;
+
+}
+
+/*==============================
+        MOBILE
+===============================*/
+
+@media(max-width:768px){
+
+    .menu-btn{
+
+        display:block;
+
+    }
+
+    .nav-menu{
+
+        position:fixed;
+
+        top:80px;
+
+        right:-100%;
+
+        width:280px;
+
+        height:calc(100vh - 80px);
+
+        background:#111;
+
+        display:flex;
+
+        flex-direction:column;
+
+        justify-content:flex-start;
+
+        padding:40px 25px;
+
+        gap:25px;
+
+        transition:.4s;
+
+        border-left:1px solid var(--border);
+
+    }
+
+    .nav-menu.active{
+
+        right:0;
+
+    }
+
+}
