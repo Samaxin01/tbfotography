@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TBfotography</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="home1.css">
+
+</head>
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <!-- Slideshow Images -->
+
+    <div class="slides">
+
+        <div class="slide active" style="background-image:url('image.jpg');"></div>
+
+        <div class="slide" style="background-image:url('image2.jpg');"></div>
+
+        <div class="slide" style="background-image:url('image3.jpg');"></div>
+
+        <div class="slide" style="background-image:url('image4.jpg');"></div>
+
+        <div class="slide" style="background-image:url('image5.jpg');"></div>
+
+        <div class="slide" style="background-image:url('image6.jpg');"></div>
+    </div>
+
+    <!-- Dark Overlay -->
+
+    <div class="overlay"></div>
+
+    <!-- Navigation -->
+
+    <header>
+
+        <div class="logo">
+
+            <span>TB</span>fotography
+
+        </div>
+
+<button class="menu-btn" id="menuBtn">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+    </header>
+
+<!-- Mobile Menu -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <a href="#">Home</a>
+
+    <a href="packages.html">Packages</a>
+
+    <a href="faq.html">Faq</a>
+
+    <a href="gallery.html">Gallery</a>
+
+   
+
+</div>
+
+    <!-- Hero Content -->
+
+    <div class="hero-content">
+
+        <h1>
+
+            TB<span>fotography</span>
+
+        </h1>
+
+        <h2>
+
+            Capturing Moments That Last Forever.
+
+        </h2>
+
+        <p>
+
+            Professional Photography for Babies, Kids,
+            Adults, Couples, Families & Events.
+
+        </p>
+
+        <div class="buttons">
+
+            <a href="packages.html" class="btn gold">
+
+                📦 View Packages
+
+            </a>
+
+            <a href="https://wa.me/234XXXXXXXXXX"
+               class="btn dark">
+
+                💬 Book Now
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Scroll -->
+
+    <div class="scroll">
+
+        <div class="mouse">
+
+            <div class="wheel"></div>
+
+        </div>
+
+    </div>
+
+    <!-- WhatsApp -->
+
+    <a href="https://wa.me/2348036198361"
+       class="whatsapp">
+
+        <img src="whatsapp.png">
+
+    </a>
+
+</section>
+
+
+<!-- ===========================
+WHY CHOOSE TBFOTOGRAPHY
+=========================== -->
+
+<section class="why-section" id="why">
+
+    <div class="section-heading">
+
+        <span>WHY CHOOSE US</span>
+
+        <h2>Why Choose <span class="gold1">TBfotography?</span></h2>
+
+        <p>
+            We don't just take pictures — we capture timeless memories with passion,
+            creativity, and professional excellence.
+        </p>
+
+    </div>
+
+    <div class="why-grid">
+
+        <div class="why-card">
+
+            <div class="icon" style="background-color: gold;">📸</div>
+
+            <h3>Professional Photography</h3>
+
+            <p>
+                Every session is captured with high-quality cameras and creative techniques
+                to deliver stunning images.
+            </p>
+
+        </div>
+
+        <div class="why-card">
+
+            <div class="icon" style="background-color: gold;">✨</div>
+
+            <h3>Premium Editing</h3>
+
+            <p>
+                Every photo is professionally edited to ensure beautiful colours,
+                lighting and flawless finishing.
+            </p>
+
+        </div>
+
+        <div class="why-card">
+
+            <div class="icon" style="background-color: gold;">❤️</div>
+
+            <h3>Friendly Experience</h3>
+
+            <p>
+                We create a relaxed and enjoyable atmosphere for babies, kids,
+                couples and families.
+            </p>
+
+        </div>
+
+        <div class="why-card">
+
+            <div class="icon" style="background-color: gold;">⚡</div>
+
+            <h3>Fast Delivery</h3>
+
+            <p>
+                Receive your beautifully edited photos quickly without sacrificing quality.
+            </p>
+
+        </div>
+
+        <div class="why-card">
+
+            <div class="icon" style="background-color: gold;">🏆</div>
+
+            <h3>Years of Experience</h3>
+
+            <p>
+                Our experience allows us to capture every smile,
+                emotion and unforgettable moment perfectly.
+            </p>
+
+        </div>
+
+        <div class="why-card">
+
+            <div class="icon">🤝</div>
+
+            <h3>Customer Satisfaction</h3>
+
+            <p>
+                Your happiness is our priority.
+                We strive to make every photoshoot memorable from start to finish.
+            </p>
+
+        </div>
+
+    </div>
+    
+</section>
+
+
+
+
+<script>
+/* ===========================
+   HERO SLIDER
+=========================== */
+
+const slides = document.querySelectorAll(".slide");
+
+let currentSlide = 0;
+
+function showSlide(index){
+
+    slides.forEach(slide=>slide.classList.remove("active"));
+
+    slides[index].classList.add("active");
+
+}
+
+showSlide(currentSlide);
+
+setInterval(()=>{
+
+    currentSlide++;
+
+    if(currentSlide >= slides.length){
+
+        currentSlide = 0;
+
+    }
+
+    showSlide(currentSlide);
+
+},5000);
+
+
+/* ===========================
+   MOBILE MENU
+=========================== */
+
+const menuBtn = document.getElementById("menuBtn");
+
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuBtn.addEventListener("click",()=>{
+
+    menuBtn.classList.toggle("active");
+
+    mobileMenu.classList.toggle("show");
+
+});
+
+// Close menu when a link is clicked
+
+document.querySelectorAll(".mobile-menu a").forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        menuBtn.classList.remove("active");
+
+        mobileMenu.classList.remove("show");
+
+    });
+
+});
+</script>
+
+</body>
+</html>
